@@ -14,7 +14,11 @@ export default {
       muted: "hsl(var(--muted) / <alpha-value>)",
       secondary: "hsl(var(--secondary) / <alpha-value>)",
       soft: "hsl(var(--soft) / <alpha-value>)",
-    }
+    },
+    fontFamily: {
+      sans: "Hind , serif",
+      serif: "Poppins, serif",
+    },
   },
   plugins: [],
 };

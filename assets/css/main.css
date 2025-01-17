@@ -9,6 +9,7 @@
   --soft: 55 100% 97%;
 }
 
-* {
-    font-family: 'Poppins', sans-serif;
-  }
+
+body{
+  @apply bg-soft w-full;
+}
