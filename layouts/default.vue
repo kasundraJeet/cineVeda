@@ -1,6 +1,6 @@
 <template>
     <main>
-        yayya   
+        yayya
         <slot />
     </main>
 </template>
