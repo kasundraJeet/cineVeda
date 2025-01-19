@@ -14,7 +14,7 @@ export default defineNuxtConfig({
       Hind: ["300", "400", "500", "600", "700"],
     },
   },
-  modules: ["@nuxt/image", "@nuxtjs/robots", "@nuxtjs/google-fonts"],
+  modules: ["@nuxt/image", "@nuxtjs/robots", "@nuxtjs/google-fonts", "@nuxtjs/seo"],
   postcss: {
     plugins: {
       tailwindcss: {},

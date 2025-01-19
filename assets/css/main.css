@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --primary: 0 0% 20%;
-  --muted: 56 44% 94%;
-  --secondary: 0 0% 15%;
-  --soft: 55 100% 97%;
+  --primary: 0 0% 20%; /* #333333 */
+  --muted: 56 44% 94%; /* #f6f5e8  */
+  --secondary: 0 0% 14.51%; /* #252525 */
+  --soft: 55 100% 97%; /* #fffef2 */
 }
 
 

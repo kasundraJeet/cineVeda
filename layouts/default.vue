@@ -1,6 +1,7 @@
 <template>
+    <AppHeader />
     <main>
-        yayya
         <slot />
     </main>
+    <AppFooter />
 </template>

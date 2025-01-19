@@ -9,6 +9,9 @@ export default {
     "./error.vue",
   ],
   theme: {
+    container: {
+      center: true,
+    },
     colors: {
       primary: "hsl(var(--primary) / <alpha-value>)",
       muted: "hsl(var(--muted) / <alpha-value>)",
