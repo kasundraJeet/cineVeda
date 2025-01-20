@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       Poppins: ["200", "300", "400", "500", "600", "700", "800", "900"],
-      Hind: ["300", "400", "500", "600", "700"],
+      Nunito: ["300", "400", "500", "600", "700"],
     },
   },
   modules: ["@nuxt/image", "@nuxtjs/robots", "@nuxtjs/google-fonts", "@nuxtjs/seo"],

@@ -19,7 +19,7 @@ export default {
       soft: "hsl(var(--soft) / <alpha-value>)",
     },
     fontFamily: {
-      sans: "Hind , serif",
+      sans: "Nunito , serif",
       serif: "Poppins, serif",
     },
   },

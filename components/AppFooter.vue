@@ -37,7 +37,7 @@ const footerGrid = ref([
         <div class="copyright">
             <div class="container">
                 <p>© 2025 kasundra jeet. All rights reserved.
-                    Data powered by TMDb (The Movie Database).</p>
+                    Data powered by TMDb (The Movie Database)</p>
             </div>
         </div>
     </footer>
