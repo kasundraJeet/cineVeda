@@ -1,22 +1,59 @@
 <template>
     <div class="flex items-stretch gap-5">
-        <NuxtLink to="/" class="pagination-btn">Prev</NuxtLink>
+        <NuxtLink :to="`${linkPath}/${currentPage - 1}`" class="pagination-btn" v-if="currentPage > 1">Prev
+        </NuxtLink>
+
         <div class="flex items-stretch gap-1">
-            <NuxtLink to="/" class="pagination-count active">1</NuxtLink>
-            <NuxtLink to="/" class="pagination-count">2</NuxtLink>
-            <NuxtLink to="/" class="pagination-count">3</NuxtLink>
-            <span class="pagination-count">...</span>
-            <NuxtLink to="/" class="pagination-count">40</NuxtLink>
-            <NuxtLink to="/" class="pagination-count">60</NuxtLink>
-            <NuxtLink to="/" class="pagination-count">70</NuxtLink>
-            <span class="pagination-count">...</span>
-            <NuxtLink to="/" class="pagination-count">120</NuxtLink>
-            <NuxtLink to="/" class="pagination-count">130</NuxtLink>
-            <NuxtLink to="/" class="pagination-count">140</NuxtLink>
+            <NuxtLink v-if="currentPage > 2" :to="`${linkPath}/1`" class="pagination-count">1</NuxtLink>
+
+            <span v-if="currentPage > 6" class="pagination-count">...</span>
+
+            <NuxtLink v-for="page in pageNumbers" :key="page" :to="`${linkPath}/${page}`"
+                :class="['pagination-count', { active: page === currentPage }]">
+                {{ page }}
+            </NuxtLink>
+
+            <span v-if="currentPage < totalPages - 2" class="pagination-count">...</span>
+
+            <NuxtLink v-if="currentPage < totalPages - 2" :to="`${linkPath}/${totalPages}`" class="pagination-count">{{
+                totalPages }}</NuxtLink>
         </div>
-        <NuxtLink to="/" class="pagination-btn">Next</NuxtLink>
+
+        <NuxtLink :to="`${linkPath}/${currentPage + 1}`" class="pagination-btn" v-if="currentPage < totalPages">
+            Next</NuxtLink>
     </div>
 </template>
+
+<script setup>
+import { defineProps, computed } from 'vue';
+
+const props = defineProps({
+    totalPages: {
+        type: Number,
+        required: true
+    },
+    currentPage: {
+        type: Number,
+        required: true
+    },
+    linkPath: {
+        type: String,
+        required: true
+    }
+});
+
+const pageNumbers = computed(() => {
+    const pages = [];
+    const start = Math.max(1, props.currentPage - 2);
+    const end = Math.min(props.totalPages, props.currentPage + 2);
+
+    for (let i = start; i <= end; i++) {
+        pages.push(i);
+    }
+
+    return pages;
+});
+</script>
 
 <style scoped>
 .pagination-btn {

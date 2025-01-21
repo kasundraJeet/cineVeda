@@ -4,7 +4,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     onRequest({ request, options, error }) {
       options.headers.set(
         "Authorization",
-        `Bearer ${useRuntimeConfig().TMDB_TOKEN}`
+        `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwYTY5OTQ4NmNhODlhYjAxYjViZWIxZmJjMWU4ZGEzZiIsIm5iZiI6MTcyNTMwMjg1OS42MzM5OTk4LCJzdWIiOiI2NmQ2MDg0Yjk0ZGMyZjE1OGY2ZWU4MmMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.fBFbmqP3-bHgp54t-n5vd1sQwTy7zcwfHnZl924qncI`
       );
     },
   });

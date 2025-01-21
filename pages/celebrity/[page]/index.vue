@@ -1,6 +1,18 @@
 <script setup>
-const { data: modulesRef } = await useAPI('person/popular?language=en-US&page=1')
+import { useRoute, useRouter } from 'vue-router'
 
+const route = useRoute()
+const router = useRouter()
+
+const page = Number(route.params.page)
+
+if (isNaN(page) || page < 1 || page > 500) {
+    router.push('/')
+}
+
+console.log(page)
+
+const { data: modulesRef } = await useAPI(`person/popular?language=en-US&page=${page}`)
 const modules = modulesRef.value;
 </script>
 
