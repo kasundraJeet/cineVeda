@@ -1,12 +1,23 @@
+<script setup>
+defineProps({
+    array: Array
+})
+</script>
+
 <template>
-    <li>
+    <li v-for="item in array" :key="item.id">
         <NuxtLink to="/" class="img">
-            <NuxtImg src="https://placehold.co/800x800" alt="placeholder" />
+            <NuxtImg :src="`http://image.tmdb.org/t/p/w500${item.profile_path}`" :alt="item.name" />
         </NuxtLink>
         <div class="py-2.5 px-3.5">
-            <NuxtLink to="/" class="font-serif text-lg text-primary block">Kasundra Jeet</NuxtLink>
-            <div class="flex items-center flex-wrap  gap-1.5">
-                <NuxtLink to="/" class="text-secondary text-base opacity-70">jumanji</NuxtLink>
+            <NuxtLink to="/" class="font-serif text-lg text-primary block">{{ item.name }}</NuxtLink>
+            <div class="flex items-center flex-wrap gap-x-2 gap-y-0.5">
+                <span v-for="(link, index) in item.known_for" :key="link.id">
+                    <NuxtLink to="/" class="text-secondary text-base opacity-70">
+                        {{ link.title ? link.title : link.name }}
+                    </NuxtLink>
+                    <span v-if="index < item.known_for.length - 1">, </span>
+                </span>
             </div>
         </div>
     </li>
@@ -18,7 +29,7 @@ li {
 }
 
 li .img {
-    @apply relative w-full pt-[110%] block overflow-hidden
+    @apply relative w-full pt-[120%] block overflow-hidden
 }
 
 li .img img {
