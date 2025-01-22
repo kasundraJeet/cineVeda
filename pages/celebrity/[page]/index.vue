@@ -10,8 +10,6 @@ if (isNaN(page) || page < 1 || page > 500) {
     router.push('/')
 }
 
-console.log(page)
-
 const { data: modulesRef } = await useAPI(`person/popular?language=en-US&page=${page}`)
 const modules = modulesRef.value;
 </script>
