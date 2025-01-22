@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: true,
   compatibilityDate: "2024-11-01",
@@ -10,11 +9,19 @@ export default defineNuxtConfig({
       Nunito: ["300", "400", "500", "600", "700"],
     },
   },
-  modules: ["@nuxt/image", "@nuxtjs/robots", "@nuxtjs/google-fonts", "@nuxtjs/seo"],
+  modules: [
+    "@nuxt/image",
+    "@nuxtjs/robots",
+    "@nuxtjs/google-fonts",
+    "@nuxtjs/seo",
+  ],
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
+  },
+  sitemap: {
+    sitemaps: true,
   },
 });
