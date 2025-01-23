@@ -10,11 +10,23 @@ if (isNaN(page) || page < 1 || page > 500) {
 
 const { data: modulesRef } = await useAPI(`person/popular?language=en-US&page=${page}`)
 const modules = modulesRef.value;
+
+
+const breadcrumbs = ref([
+    {
+        title: 'Celebritys',
+        link: '/celebrity'
+    },
+    {
+        title: `Page ${page}`
+    }
+])
 </script>
 
 <template>
     <div class="container py-20">
         <div class="space-y-14">
+            <Breadcrumbs :breadcrumb="breadcrumbs" />
             <ul class="grid grid-cols-4 gap-4">
                 <CelebrityBox :array="modules.results" />
             </ul>

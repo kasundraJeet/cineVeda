@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     "@nuxtjs/robots",
     "@nuxtjs/google-fonts",
     "@nuxtjs/seo",
+    "nuxt-lucide-icons",
   ],
   postcss: {
     plugins: {

@@ -28,11 +28,21 @@ for (let i = combinedArrayTv.length - 1; i > 0; i--) {
 
 const details = detailsData.value
 const photos = photosData.value
+
+const breadcrumbs = ref([
+    {
+        title: 'Celebritys',
+        link: '/celebrity'
+    },
+    {
+        title: `${details.name}`
+    }
+])
 </script>
 
 <template>
    <div class="pb-20 pt-10 container space-y-10">
-      <div></div>
+      <Breadcrumbs :breadcrumb="breadcrumbs" />
       <div class="space-y-10">
          <div class="grid gap-12 grid-cols-6 items-start">
             <div class="col-span-2 pt-[120%] sticky top-2 overflow-hidden">
