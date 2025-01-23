@@ -4,7 +4,10 @@ const celebrityId = route.params.celebrity.match(/^\d+/)[0]
 
 const { data: detailsRef } = await useAPI(`person/${celebrityId}?language=en-US`)
 
+const { data: photosRef } = await useAPI(`person/${celebrityId}/images`)
+
 const details = detailsRef.value;
+const photos = photosRef.value;
 </script>
 
 <template>
@@ -59,9 +62,14 @@ const details = detailsRef.value;
                         <NuxtLink to="/">Credits</NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink
+                        <NuxtLink class="active"
                             :to="`/celebrity/${details.id}-${details.name.replace(/\s+/g, '-').toLowerCase()}/photos`">
                             Photos</NuxtLink>
+                    </li>
+                </ul>
+                <ul class="grid grid-cols-4 gap-3">
+                    <li class="relative w-full pt-[120%]" v-for="image in photos.profiles" :key="image.key">
+                        <NuxtImg :src="`http://image.tmdb.org/t/p/w500/${image.file_path}`" :alt="details.name" class="absolute inset-0 object-cover w-full h-full" />
                     </li>
                 </ul>
             </div>
@@ -92,5 +100,9 @@ const details = detailsRef.value;
 
 .tab-list a {
     @apply bg-soft py-2 px-2 block capitalize hover:underline text-secondary text-xl
+}
+
+.tab-list a.active{
+@apply underline underline-offset-2
 }
 </style>

@@ -6,15 +6,18 @@ defineProps({
 
 <template>
     <li v-for="item in array" :key="item.id">
-        <NuxtLink to="/" class="img" :title="item.name" :aria-label="item.name">
+        <NuxtLink :to="`/celebrity/${item.id}-${item.name.replace(/\s+/g, '-').toLowerCase()}`" class="img"
+            :title="item.name" :aria-label="item.name">
             <NuxtImg :src="`http://image.tmdb.org/t/p/w500${item.profile_path}`" :alt="item.name" />
         </NuxtLink>
         <div class="py-2.5 px-3.5">
-            <NuxtLink to="/" class="font-serif text-lg text-primary block">{{ item.name }}</NuxtLink>
+            <NuxtLink :to="`/celebrity/${item.id}-${item.name.replace(/\s+/g, '-').toLowerCase()}`"
+                class="font-serif text-lg text-primary block">{{ item.name }}</NuxtLink>
             <div class="flex items-center flex-wrap gap-x-1.5 gap-y-0.5">
                 <span v-for="(link, index) in item.known_for" :key="link.id">
-                    <NuxtLink to="/" class="text-secondary text-sm opacity-70"
-                        :title="link.title ? link.title : link.name" :aria-label="link.title ? link.title : link.name">
+                    <NuxtLink :to="`/celebrity/${item.id}-${item.name.replace(/\s+/g, '-').toLowerCase()}`"
+                        class="text-secondary text-sm opacity-70" :title="link.title ? link.title : link.name"
+                        :aria-label="link.title ? link.title : link.name">
                         {{ link.title ? link.title : link.name }}
                     </NuxtLink>
                     <span v-if="index < item.known_for.length - 1">, </span>
