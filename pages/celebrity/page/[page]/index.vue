@@ -1,6 +1,4 @@
 <script setup>
-import { useRoute, useRouter } from 'vue-router'
-
 const route = useRoute()
 const router = useRouter()
 
@@ -21,7 +19,7 @@ const modules = modulesRef.value;
                 <CelebrityBox :array="modules.results" />
             </ul>
             <div class="flex items-center justify-center">
-                <Pagination :totalPages="500" :currentPage="modules.page" linkPath="/celebrity" />
+                <Pagination :totalPages="500" :currentPage="modules.page" linkPath="/celebrity/page" />
             </div>
         </div>
     </div>

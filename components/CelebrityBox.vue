@@ -11,9 +11,9 @@ defineProps({
         </NuxtLink>
         <div class="py-2.5 px-3.5">
             <NuxtLink to="/" class="font-serif text-lg text-primary block">{{ item.name }}</NuxtLink>
-            <div class="flex items-center flex-wrap gap-x-2 gap-y-0.5">
+            <div class="flex items-center flex-wrap gap-x-1.5 gap-y-0.5">
                 <span v-for="(link, index) in item.known_for" :key="link.id">
-                    <NuxtLink to="/" class="text-secondary text-base opacity-70"
+                    <NuxtLink to="/" class="text-secondary text-sm opacity-70"
                         :title="link.title ? link.title : link.name" :aria-label="link.title ? link.title : link.name">
                         {{ link.title ? link.title : link.name }}
                     </NuxtLink>
