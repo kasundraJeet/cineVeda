@@ -22,7 +22,12 @@ export default defineNuxtConfig({
     },
   },
   sitemap: {
-    sources: ['/api/__sitemap__/urls'],
-    sitemaps: true,
+    sitemaps: {
+      celebrity_pages: {
+        sources: [
+          '/api/__sitemap__/urls/celebrityPages',
+        ]
+      }
+    }
   },
 });
