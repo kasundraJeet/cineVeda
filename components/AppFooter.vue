@@ -1,6 +1,33 @@
 <script setup>
 const footerGrid = ref([
     {
+        key: 3,
+        is: 'about',
+        title: 'About Site',
+        description: 'loremasjjsj'
+    },
+    {
+        key: 2,
+        title: 'Movies',
+        links: [
+            {
+                key: 21,
+                link: 'Movies',
+                to: '/movie',
+            },
+            {
+                key: 21,
+                link: 'Popular Movies',
+                to: '/movie',
+            },
+            {
+                key: 21,
+                link: 'Top Rated Movies',
+                to: '/movie/top-rated',
+            }
+        ]
+    },
+    {
         key: 1,
         title: 'Celebrity',
         links: [
@@ -23,10 +50,12 @@ const footerGrid = ref([
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <section class="footer-box" v-for="item in footerGrid" :key="item.key">
+                <section class="footer-box" :class="item.is === 'about' ? 'col-span-2' : ''" v-for="item in footerGrid"
+                    :key="item.key">
                     <h3>{{ item.title }}</h3>
                     <div class="h-[1px] bg-soft w-full"></div>
-                    <ul class="links-group">
+                    <p class="text-base" v-if="item.is === 'about'">{{ item.description }}</p>
+                    <ul v-else class="links-group">
                         <li class="w-full" v-for="link in item.links" :key="link.key">
                             <NuxtLink :to="link.to">{{ link.link }}</NuxtLink>
                         </li>
