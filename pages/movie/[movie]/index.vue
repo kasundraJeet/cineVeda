@@ -4,14 +4,13 @@ const movieId = route.params.movie.match(/^\d+/)[0]
 
 const { data: detailsData } = await useAPI(`movie/${movieId}?language=en-US`)
 
-console.log(detailsData.value)
 
 const details = detailsData.value
 
 const breadcrumbs = ref([
     {
-        title: 'Celebritys',
-        link: '/celebrity'
+        title: 'Movies',
+        link: '/movie'
     },
     {
         title: `${details?.title}`

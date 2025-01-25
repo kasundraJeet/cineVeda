@@ -27,14 +27,5 @@ export default defineNuxtConfig({
     defaults: {
       extension: 'jpeg',
     }
-  },
-  sitemap: {
-    sitemaps: {
-      celebrity_pages: {
-        sources: [
-          '/api/__sitemap__/urls/celebrityPages',
-        ]
-      }
-    }
-  },
+  }
 });
