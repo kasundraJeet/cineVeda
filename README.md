@@ -73,3 +73,11 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+
+
+celebrity
+celebrity page 1 to 500
+today trending,
+weekly trending
+celebrity page

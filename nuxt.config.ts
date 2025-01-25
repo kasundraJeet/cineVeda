@@ -22,6 +22,12 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  ogImage: {
+    googleFontMirror: true,
+    defaults: {
+      extension: 'jpeg',
+    }
+  },
   sitemap: {
     sitemaps: {
       celebrity_pages: {

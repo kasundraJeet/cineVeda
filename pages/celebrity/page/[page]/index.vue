@@ -1,8 +1,25 @@
 <script setup>
+
+
 const route = useRoute()
 const router = useRouter()
 
 const page = Number(route.params.page)
+
+useSeoMeta({
+    title: `Celebrity page ${page}`,
+    description: `Celebrity page ${page}`,
+    ogDescription: `Celebrity page ${page}`,
+    twitterTitle: `Celebrity page ${page}`,
+    twitterDescription: `Celebrity page ${page}`,
+    twitterCard: 'summary'
+})
+
+defineOgImageComponent('Nuxt', {
+    headline: 'CineVEDA',
+    title: 'Celebrity',
+    description: `Celebrity Page ${page}`
+})
 
 if (isNaN(page) || page < 1 || page > 500) {
     router.push('/')

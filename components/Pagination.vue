@@ -5,7 +5,7 @@
         </NuxtLink>
 
         <div class="flex items-stretch gap-1">
-            <NuxtLink title="Go to first page" aria-label="First page" v-if="currentPage > 2" :to="`${linkPath}/1`"
+            <NuxtLink title="Go to first page" aria-label="First page" v-if="currentPage > 3" :to="`${linkPath}/1`"
                 class="pagination-count">1</NuxtLink>
 
             <span title="More pages" aria-label="More pages" v-if="currentPage > 6" class="pagination-count">...</span>

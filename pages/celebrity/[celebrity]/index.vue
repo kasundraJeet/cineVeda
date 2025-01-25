@@ -26,17 +26,34 @@ for (let i = combinedArrayTv.length - 1; i > 0; i--) {
    [combinedArrayTv[i], combinedArrayTv[j]] = [combinedArrayTv[j], combinedArrayTv[i]];
 }
 
+
 const details = detailsData.value
 const photos = photosData.value
 
+useSeoMeta({
+   title: `${details.name}`,
+   description: `${details.name} biography`,
+   ogDescription: `${details.name} biography`,
+   twitterTitle: 'this week trending celebrity',
+   twitterDescription: `${details.name} biography`,
+   twitterCard: 'summary'
+})
+
+defineOgImageComponent('Nuxt', {
+   headline: 'CineVEDA',
+   title: `${details.name}`,
+   description: `${details.name} biography`
+})
+
+
 const breadcrumbs = ref([
-    {
-        title: 'Celebritys',
-        link: '/celebrity'
-    },
-    {
-        title: `${details.name}`
-    }
+   {
+      title: 'Celebritys',
+      link: '/celebrity'
+   },
+   {
+      title: `${details.name}`
+   }
 ])
 </script>
 

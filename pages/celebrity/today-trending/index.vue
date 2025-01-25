@@ -2,6 +2,20 @@
 const { data: modulesRef } = await useAPI(`trending/person/day?language=en-US&page=1`)
 const modules = modulesRef.value;
 
+useSeoMeta({
+    title: 'Today trending celebrity',
+    description: 'Trending Worldwide Actresses',
+    ogDescription: 'Trending Worldwide Actresses',
+    twitterTitle: 'Today trending celebrity',
+    twitterDescription: 'Trending Worldwide Actresses',
+    twitterCard: 'summary'
+})
+
+defineOgImageComponent('Nuxt', {
+    headline: 'CineVEDA',
+    title: 'Today trending celebrity',
+    description: 'Trending Worldwide Actresses'
+})
 
 const breadcrumbs = ref([
     {
