@@ -37,9 +37,19 @@ const footerGrid = ref([
                 to: '/celebrity',
             },
             {
-                key: 11,
+                key: 12,
                 link: 'Popular Celebritys',
-                to: '/',
+                to: '/celebrity',
+            },
+            {
+                key: 13,
+                link: 'Today Trending',
+                to: '/celebrity/today-trending',
+            },
+            {
+                key: 14,
+                link: 'Weekly Trending',
+                to: '/celebrity/weekly-trending',
             }
         ]
     }

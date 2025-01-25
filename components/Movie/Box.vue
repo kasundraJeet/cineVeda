@@ -12,11 +12,11 @@ const getStarRating = (voteAverage) => {
 
 <template>
     <li v-for="item in array" :key="item.id">
-        <NuxtLink :to="`/`" class="img" :title="item.title" :aria-label="item.title">
+        <NuxtLink :to="`/movie/${item.id}-${item.title.replace(/\s+/g, '-').toLowerCase()}`" class="img" :title="item.title" :aria-label="item.title">
             <NuxtImg :src="`http://image.tmdb.org/t/p/w500${item.poster_path}`" :alt="item.name" />
         </NuxtLink>
         <div class="py-2.5 px-3.5">
-            <NuxtLink :to="`/`" class="font-serif text-lg text-primary block">{{ item.title }}</NuxtLink>
+            <NuxtLink :to="`/movie/${item.id}-${item.title.replace(/\s+/g, '-').toLowerCase()}`" class="font-serif text-lg text-primary block">{{ item.title }}</NuxtLink>
             <div class="flex items-center">
                 <span v-for="n in Math.floor(getStarRating(item.vote_average))" :key="n">
                     <Star class="size-3" fill="#111" strokeWidth={0} />

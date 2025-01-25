@@ -13,3 +13,7 @@
 body{
   @apply bg-soft w-full;
 }
+
+.sort-select{
+  @apply border border-secondary bg-soft min-w-[240px] rounded-sm px-1 py-1.5
+}
