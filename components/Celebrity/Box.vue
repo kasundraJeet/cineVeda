@@ -16,7 +16,7 @@ defineProps({
             <div class="flex items-center flex-wrap gap-x-1">
                 <span v-for="(link, index) in item.known_for" :key="link.id">
                     <NuxtLink
-                        :to="`/movie/${link.id}-${link.title ? link.title.replace(/\s+/g, '-').toLowerCase() : link.name.replace(/\s+/g, '-').toLowerCase()}`"
+                        :to="link.media_type !== 'tv' ? `/movie/${link.id}-${link.title ? link.title.replace(/\s+/g, '-').toLowerCase() : link.name.replace(/\s+/g, '-').toLowerCase()}` : '/'"
                         class="text-secondary text-sm opacity-70" :title="link.title ? link.title : link.name"
                         :aria-label="link.title ? link.title : link.name">
                         {{ link.title ? link.title : link.name }}

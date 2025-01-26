@@ -25,6 +25,7 @@ const breadcrumbs = ref([{
 
 <template>
     <div class="container pt-10 pb-20">
+        <h1 class=" absolute opacity-0 left-0 top-0">Celebrity</h1>
         <div class="space-y-14">
             <Breadcrumbs :breadcrumb="breadcrumbs" />
             <ul class="grid grid-cols-4 gap-4">
