@@ -36,6 +36,38 @@ const navMenu = ref([
 
             }
         }
+    },
+    {
+        id: 2,
+        title: 'Movies',
+        group: {
+            links_group: [
+                {
+                    id: 11,
+                    title: 'Links',
+                    links: [
+                        {
+                            id: 111,
+                            to: '/',
+                            label: 'Popular Celebritys'
+                        },
+                        {
+                            id: 112,
+                            to: '/',
+                            label: 'Male Celebritys'
+                        },
+                        {
+                            id: 113,
+                            to: '/',
+                            label: 'Female Celebritys'
+                        }
+                    ]
+                }
+            ],
+            poster: {
+
+            }
+        }
     }
 ]);
 </script>
@@ -49,7 +81,7 @@ const navMenu = ref([
                     <RouterLink to="/">LOGO</RouterLink>
                 </li>
                 <li>
-                    <ul>
+                    <ul class="flex items-stretch gap-4">
                         <li class="relative" v-for="item in navMenu" :key="item.id">
                             <button class="nav-btn" @click="megaMenuData = item.group">
                                 {{ item.title }}
