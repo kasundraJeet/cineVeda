@@ -48,18 +48,18 @@ const navMenu = ref([
                     links: [
                         {
                             id: 111,
-                            to: '/',
-                            label: 'Popular Celebritys'
+                            to: '/movie',
+                            label: 'Movies'
                         },
                         {
                             id: 112,
-                            to: '/',
-                            label: 'Male Celebritys'
+                            to: '/movie/top-rated',
+                            label: 'Top Rated Movies'
                         },
                         {
                             id: 113,
-                            to: '/',
-                            label: 'Female Celebritys'
+                            to: '/movie',
+                            label: 'Popular Movies'
                         }
                     ]
                 }
