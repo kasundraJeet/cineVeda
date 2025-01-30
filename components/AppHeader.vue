@@ -54,7 +54,7 @@ const navMenu = ref([
                         {
                             id: 212,
                             to: '/movie/top-rated',
-                            label: 'Top Rated Movies'
+                            label: 'Top Rated Movie'
                         },
                         {
                             id: 213,
